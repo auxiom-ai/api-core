@@ -1,0 +1,1978 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Swagger Sample</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Swagger Sample</h1>
+    <div class="app-desc">A sample swagger server</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    
+    
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  <li><a href="#apiRestEmailsGet"><code><span class="http-method">get</span> /api/rest/emails</code></a></li>
+  <li><a href="#apiRestEmailsIdDelete"><code><span class="http-method">delete</span> /api/rest/emails/{id}</code></a></li>
+  <li><a href="#apiRestEmailsIdGet"><code><span class="http-method">get</span> /api/rest/emails/{id}</code></a></li>
+  <li><a href="#apiRestEmailsIdPost"><code><span class="http-method">post</span> /api/rest/emails/{id}</code></a></li>
+  <li><a href="#apiRestEmailsPost"><code><span class="http-method">post</span> /api/rest/emails</code></a></li>
+  <li><a href="#apiRestPodcastsGet"><code><span class="http-method">get</span> /api/rest/podcasts</code></a></li>
+  <li><a href="#apiRestPodcastsIdDelete"><code><span class="http-method">delete</span> /api/rest/podcasts/{id}</code></a></li>
+  <li><a href="#apiRestPodcastsIdGet"><code><span class="http-method">get</span> /api/rest/podcasts/{id}</code></a></li>
+  <li><a href="#apiRestPodcastsIdPost"><code><span class="http-method">post</span> /api/rest/podcasts/{id}</code></a></li>
+  <li><a href="#apiRestPodcastsPost"><code><span class="http-method">post</span> /api/rest/podcasts</code></a></li>
+  <li><a href="#apiRestUsersGet"><code><span class="http-method">get</span> /api/rest/users</code></a></li>
+  <li><a href="#apiRestUsersIdDelete"><code><span class="http-method">delete</span> /api/rest/users/{id}</code></a></li>
+  <li><a href="#apiRestUsersIdGet"><code><span class="http-method">get</span> /api/rest/users/{id}</code></a></li>
+  <li><a href="#apiRestUsersIdPost"><code><span class="http-method">post</span> /api/rest/users/{id}</code></a></li>
+  <li><a href="#apiRestUsersPost"><code><span class="http-method">post</span> /api/rest/users</code></a></li>
+  </ul>
+
+  <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="apiRestEmailsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /api/rest/emails</code></pre></div>
+    <div class="method-summary">emails (<span class="nickname">apiRestEmailsGet</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">query emails {
+  emails {
+    email
+    id
+    subscribed
+  }
+}
+
+</code></pre>
+</div>
+
+
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_10">inline_response_200_10</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "emails" : [ {
+    "subscribed" : true,
+    "id" : 0,
+    "email" : "email"
+  }, {
+    "subscribed" : true,
+    "id" : 0,
+    "email" : "email"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for GET /api/rest/emails
+        <a href="#inline_response_200_10">inline_response_200_10</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestEmailsIdDelete"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /api/rest/emails/{id}</code></pre></div>
+    <div class="method-summary">delete_emails_by_pk (<span class="nickname">apiRestEmailsIdDelete</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation delete_emails_by_pk($id: Int!) {
+  delete_emails_by_pk(id: $id) {
+    email
+    id
+    subscribed
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#emails_id_body_2">emails_id_body_2</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_14">inline_response_200_14</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "delete_emails_by_pk" : {
+    "subscribed" : true,
+    "id" : 0,
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for DELETE /api/rest/emails/{id}
+        <a href="#inline_response_200_14">inline_response_200_14</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestEmailsIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /api/rest/emails/{id}</code></pre></div>
+    <div class="method-summary">emails_by_pk (<span class="nickname">apiRestEmailsIdGet</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">query emails_by_pk($id: Int!) {
+  emails_by_pk(id: $id) {
+    email
+    id
+    subscribed
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#emails_id_body">emails_id_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_12">inline_response_200_12</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "emails_by_pk" : {
+    "subscribed" : true,
+    "id" : 0,
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for GET /api/rest/emails/{id}
+        <a href="#inline_response_200_12">inline_response_200_12</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestEmailsIdPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /api/rest/emails/{id}</code></pre></div>
+    <div class="method-summary">update_emails_by_pk (<span class="nickname">apiRestEmailsIdPost</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation update_emails_by_pk($id: Int!, $object: emails_set_input!) {
+  update_emails_by_pk(pk_columns: {id: $id}, _set: $object) {
+    email
+    id
+    subscribed
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#emails_id_body_1">emails_id_body_1</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_13">inline_response_200_13</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "update_emails_by_pk" : {
+    "subscribed" : true,
+    "id" : 0,
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for POST /api/rest/emails/{id}
+        <a href="#inline_response_200_13">inline_response_200_13</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestEmailsPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /api/rest/emails</code></pre></div>
+    <div class="method-summary">insert_emails_one (<span class="nickname">apiRestEmailsPost</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation insert_emails_one($object: emails_insert_input!) {
+  insert_emails_one(object: $object) {
+    email
+    id
+    subscribed
+  }
+}
+
+</code></pre>
+</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#rest_emails_body">rest_emails_body</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_11">inline_response_200_11</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "insert_emails_one" : {
+    "subscribed" : true,
+    "id" : 0,
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for POST /api/rest/emails
+        <a href="#inline_response_200_11">inline_response_200_11</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestPodcastsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /api/rest/podcasts</code></pre></div>
+    <div class="method-summary">podcasts (<span class="nickname">apiRestPodcastsGet</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">query podcasts {
+  podcasts {
+    articles
+    audio_file_url
+    completed
+    date
+    episode_number
+    episode_type
+    id
+    script
+    title
+    user_id
+  }
+}
+
+</code></pre>
+</div>
+
+
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_5">inline_response_200_5</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "podcasts" : [ {
+    "date" : "",
+    "episode_type" : "episode_type",
+    "episode_number" : 0,
+    "user_id" : 1,
+    "completed" : true,
+    "id" : 6,
+    "title" : "title",
+    "articles" : "",
+    "audio_file_url" : "audio_file_url"
+  }, {
+    "date" : "",
+    "episode_type" : "episode_type",
+    "episode_number" : 0,
+    "user_id" : 1,
+    "completed" : true,
+    "id" : 6,
+    "title" : "title",
+    "articles" : "",
+    "audio_file_url" : "audio_file_url"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for GET /api/rest/podcasts
+        <a href="#inline_response_200_5">inline_response_200_5</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestPodcastsIdDelete"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /api/rest/podcasts/{id}</code></pre></div>
+    <div class="method-summary">delete_podcasts_by_pk (<span class="nickname">apiRestPodcastsIdDelete</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation delete_podcasts_by_pk($id: Int!) {
+  delete_podcasts_by_pk(id: $id) {
+    articles
+    audio_file_url
+    completed
+    date
+    episode_number
+    episode_type
+    id
+    script
+    title
+    user_id
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#podcasts_id_body_2">podcasts_id_body_2</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_9">inline_response_200_9</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "delete_podcasts_by_pk" : {
+    "date" : "",
+    "episode_type" : "episode_type",
+    "episode_number" : 0,
+    "user_id" : 1,
+    "completed" : true,
+    "id" : 6,
+    "title" : "title",
+    "articles" : "",
+    "audio_file_url" : "audio_file_url"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for DELETE /api/rest/podcasts/{id}
+        <a href="#inline_response_200_9">inline_response_200_9</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestPodcastsIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /api/rest/podcasts/{id}</code></pre></div>
+    <div class="method-summary">podcasts_by_pk (<span class="nickname">apiRestPodcastsIdGet</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">query podcasts_by_pk($id: Int!) {
+  podcasts_by_pk(id: $id) {
+    articles
+    audio_file_url
+    completed
+    date
+    episode_number
+    episode_type
+    id
+    script
+    title
+    user_id
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#podcasts_id_body">podcasts_id_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_7">inline_response_200_7</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "podcasts_by_pk" : {
+    "date" : "",
+    "episode_type" : "episode_type",
+    "episode_number" : 0,
+    "user_id" : 1,
+    "completed" : true,
+    "id" : 6,
+    "title" : "title",
+    "articles" : "",
+    "audio_file_url" : "audio_file_url"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for GET /api/rest/podcasts/{id}
+        <a href="#inline_response_200_7">inline_response_200_7</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestPodcastsIdPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /api/rest/podcasts/{id}</code></pre></div>
+    <div class="method-summary">update_podcasts_by_pk (<span class="nickname">apiRestPodcastsIdPost</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation update_podcasts_by_pk($id: Int!, $object: podcasts_set_input!) {
+  update_podcasts_by_pk(pk_columns: {id: $id}, _set: $object) {
+    articles
+    audio_file_url
+    completed
+    date
+    episode_number
+    episode_type
+    id
+    script
+    title
+    user_id
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#podcasts_id_body_1">podcasts_id_body_1</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_8">inline_response_200_8</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "update_podcasts_by_pk" : {
+    "date" : "",
+    "episode_type" : "episode_type",
+    "episode_number" : 0,
+    "user_id" : 1,
+    "completed" : true,
+    "id" : 6,
+    "title" : "title",
+    "articles" : "",
+    "audio_file_url" : "audio_file_url"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for POST /api/rest/podcasts/{id}
+        <a href="#inline_response_200_8">inline_response_200_8</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestPodcastsPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /api/rest/podcasts</code></pre></div>
+    <div class="method-summary">insert_podcasts_one (<span class="nickname">apiRestPodcastsPost</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation insert_podcasts_one($object: podcasts_insert_input!) {
+  insert_podcasts_one(object: $object) {
+    articles
+    audio_file_url
+    completed
+    date
+    episode_number
+    episode_type
+    id
+    script
+    title
+    user_id
+  }
+}
+
+</code></pre>
+</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#rest_podcasts_body">rest_podcasts_body</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_6">inline_response_200_6</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "insert_podcasts_one" : {
+    "date" : "",
+    "episode_type" : "episode_type",
+    "episode_number" : 0,
+    "user_id" : 1,
+    "completed" : true,
+    "id" : 6,
+    "title" : "title",
+    "articles" : "",
+    "audio_file_url" : "audio_file_url"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for POST /api/rest/podcasts
+        <a href="#inline_response_200_6">inline_response_200_6</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestUsersGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /api/rest/users</code></pre></div>
+    <div class="method-summary">users (<span class="nickname">apiRestUsersGet</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">query users {
+  users {
+    active
+    active_notes
+    delivered
+    delivery_day
+    email
+    episode
+    id
+    industry
+    keywords
+    name
+    note
+    occupation
+    password_hash
+    plan
+    role
+    stripe_customer_id
+    stripe_product_id
+    stripe_subscription_id
+    verified
+  }
+}
+
+</code></pre>
+</div>
+
+
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200">inline_response_200</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "users" : [ {
+    "occupation" : "occupation",
+    "role" : "role",
+    "stripe_product_id" : "stripe_product_id",
+    "verified" : true,
+    "active" : true,
+    "delivered" : "",
+    "episode" : 6,
+    "industry" : "industry",
+    "active_notes" : "",
+    "stripe_customer_id" : "stripe_customer_id",
+    "password_hash" : "password_hash",
+    "stripe_subscription_id" : "stripe_subscription_id",
+    "name" : "name",
+    "delivery_day" : 0,
+    "id" : 1,
+    "plan" : "plan",
+    "email" : "email"
+  }, {
+    "occupation" : "occupation",
+    "role" : "role",
+    "stripe_product_id" : "stripe_product_id",
+    "verified" : true,
+    "active" : true,
+    "delivered" : "",
+    "episode" : 6,
+    "industry" : "industry",
+    "active_notes" : "",
+    "stripe_customer_id" : "stripe_customer_id",
+    "password_hash" : "password_hash",
+    "stripe_subscription_id" : "stripe_subscription_id",
+    "name" : "name",
+    "delivery_day" : 0,
+    "id" : 1,
+    "plan" : "plan",
+    "email" : "email"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for GET /api/rest/users
+        <a href="#inline_response_200">inline_response_200</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestUsersIdDelete"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /api/rest/users/{id}</code></pre></div>
+    <div class="method-summary">delete_users_by_pk (<span class="nickname">apiRestUsersIdDelete</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation delete_users_by_pk($id: Int!) {
+  delete_users_by_pk(id: $id) {
+    active
+    active_notes
+    delivered
+    delivery_day
+    email
+    episode
+    id
+    industry
+    keywords
+    name
+    note
+    occupation
+    password_hash
+    plan
+    role
+    stripe_customer_id
+    stripe_product_id
+    stripe_subscription_id
+    verified
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#users_id_body_2">users_id_body_2</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_4">inline_response_200_4</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "delete_users_by_pk" : {
+    "occupation" : "occupation",
+    "role" : "role",
+    "stripe_product_id" : "stripe_product_id",
+    "verified" : true,
+    "active" : true,
+    "delivered" : "",
+    "episode" : 6,
+    "industry" : "industry",
+    "active_notes" : "",
+    "stripe_customer_id" : "stripe_customer_id",
+    "password_hash" : "password_hash",
+    "stripe_subscription_id" : "stripe_subscription_id",
+    "name" : "name",
+    "delivery_day" : 0,
+    "id" : 1,
+    "plan" : "plan",
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for DELETE /api/rest/users/{id}
+        <a href="#inline_response_200_4">inline_response_200_4</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestUsersIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /api/rest/users/{id}</code></pre></div>
+    <div class="method-summary">users_by_pk (<span class="nickname">apiRestUsersIdGet</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">query users_by_pk($id: Int!) {
+  users_by_pk(id: $id) {
+    active
+    active_notes
+    delivered
+    delivery_day
+    email
+    episode
+    id
+    industry
+    keywords
+    name
+    note
+    occupation
+    password_hash
+    plan
+    role
+    stripe_customer_id
+    stripe_product_id
+    stripe_subscription_id
+    verified
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#users_id_body">users_id_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_2">inline_response_200_2</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "users_by_pk" : {
+    "occupation" : "occupation",
+    "role" : "role",
+    "stripe_product_id" : "stripe_product_id",
+    "verified" : true,
+    "active" : true,
+    "delivered" : "",
+    "episode" : 6,
+    "industry" : "industry",
+    "active_notes" : "",
+    "stripe_customer_id" : "stripe_customer_id",
+    "password_hash" : "password_hash",
+    "stripe_subscription_id" : "stripe_subscription_id",
+    "name" : "name",
+    "delivery_day" : 0,
+    "id" : 1,
+    "plan" : "plan",
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for GET /api/rest/users/{id}
+        <a href="#inline_response_200_2">inline_response_200_2</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestUsersIdPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /api/rest/users/{id}</code></pre></div>
+    <div class="method-summary">update_users_by_pk (<span class="nickname">apiRestUsersIdPost</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation update_users_by_pk($id: Int!, $object: users_set_input!) {
+  update_users_by_pk(pk_columns: {id: $id}, _set: $object) {
+    active
+    active_notes
+    delivered
+    delivery_day
+    email
+    episode
+    id
+    industry
+    keywords
+    name
+    note
+    occupation
+    password_hash
+    plan
+    role
+    stripe_customer_id
+    stripe_product_id
+    stripe_subscription_id
+    verified
+  }
+}
+
+</code></pre>
+</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; &lt;em&gt;&amp;quot;id&amp;quot; is required (enter it either in parameters or request body)&lt;/em&gt; </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#users_id_body_1">users_id_body_1</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_3">inline_response_200_3</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "update_users_by_pk" : {
+    "occupation" : "occupation",
+    "role" : "role",
+    "stripe_product_id" : "stripe_product_id",
+    "verified" : true,
+    "active" : true,
+    "delivered" : "",
+    "episode" : 6,
+    "industry" : "industry",
+    "active_notes" : "",
+    "stripe_customer_id" : "stripe_customer_id",
+    "password_hash" : "password_hash",
+    "stripe_subscription_id" : "stripe_subscription_id",
+    "name" : "name",
+    "delivery_day" : 0,
+    "id" : 1,
+    "plan" : "plan",
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for POST /api/rest/users/{id}
+        <a href="#inline_response_200_3">inline_response_200_3</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="apiRestUsersPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /api/rest/users</code></pre></div>
+    <div class="method-summary">insert_users_one (<span class="nickname">apiRestUsersPost</span>)</div>
+    <div class="method-notes"><hr />
+<p>The GraphQl query for this endpoint is:</p>
+<pre><code class="language-graphql">mutation insert_users_one($object: users_insert_input!) {
+  insert_users_one(object: $object) {
+    active
+    active_notes
+    delivered
+    delivery_day
+    email
+    episode
+    id
+    industry
+    keywords
+    name
+    note
+    occupation
+    password_hash
+    plan
+    role
+    stripe_customer_id
+    stripe_product_id
+    stripe_subscription_id
+    verified
+  }
+}
+
+</code></pre>
+</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#rest_users_body">rest_users_body</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Query parameters can also be provided in the request body as a JSON object </div>
+                </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_1">inline_response_200_1</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "insert_users_one" : {
+    "occupation" : "occupation",
+    "role" : "role",
+    "stripe_product_id" : "stripe_product_id",
+    "verified" : true,
+    "active" : true,
+    "delivered" : "",
+    "episode" : 6,
+    "industry" : "industry",
+    "active_notes" : "",
+    "stripe_customer_id" : "stripe_customer_id",
+    "password_hash" : "password_hash",
+    "stripe_subscription_id" : "stripe_subscription_id",
+    "name" : "name",
+    "delivery_day" : 0,
+    "id" : 1,
+    "plan" : "plan",
+    "email" : "email"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Responses for POST /api/rest/users
+        <a href="#inline_response_200_1">inline_response_200_1</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#emails"><code>emails</code> - emails</a></li>
+    <li><a href="#emails_1"><code>emails_1</code> - emails</a></li>
+    <li><a href="#emails_id_body"><code>emails_id_body</code></a></li>
+    <li><a href="#emails_id_body_1"><code>emails_id_body_1</code></a></li>
+    <li><a href="#emails_id_body_2"><code>emails_id_body_2</code></a></li>
+    <li><a href="#emails_insert_input!"><code>emails_insert_input!</code> - emails_insert_input</a></li>
+    <li><a href="#emails_set_input!"><code>emails_set_input!</code> - emails_set_input</a></li>
+    <li><a href="#inline_response_200"><code>inline_response_200</code></a></li>
+    <li><a href="#inline_response_200_1"><code>inline_response_200_1</code></a></li>
+    <li><a href="#inline_response_200_10"><code>inline_response_200_10</code></a></li>
+    <li><a href="#inline_response_200_11"><code>inline_response_200_11</code></a></li>
+    <li><a href="#inline_response_200_12"><code>inline_response_200_12</code></a></li>
+    <li><a href="#inline_response_200_13"><code>inline_response_200_13</code></a></li>
+    <li><a href="#inline_response_200_14"><code>inline_response_200_14</code></a></li>
+    <li><a href="#inline_response_200_2"><code>inline_response_200_2</code></a></li>
+    <li><a href="#inline_response_200_3"><code>inline_response_200_3</code></a></li>
+    <li><a href="#inline_response_200_4"><code>inline_response_200_4</code></a></li>
+    <li><a href="#inline_response_200_5"><code>inline_response_200_5</code></a></li>
+    <li><a href="#inline_response_200_6"><code>inline_response_200_6</code></a></li>
+    <li><a href="#inline_response_200_7"><code>inline_response_200_7</code></a></li>
+    <li><a href="#inline_response_200_8"><code>inline_response_200_8</code></a></li>
+    <li><a href="#inline_response_200_9"><code>inline_response_200_9</code></a></li>
+    <li><a href="#jsonb"><code>jsonb</code> - jsonb</a></li>
+    <li><a href="#jsonb!"><code>jsonb!</code> - jsonb</a></li>
+    <li><a href="#podcasts"><code>podcasts</code> - podcasts</a></li>
+    <li><a href="#podcasts_1"><code>podcasts_1</code> - podcasts</a></li>
+    <li><a href="#podcasts_id_body"><code>podcasts_id_body</code></a></li>
+    <li><a href="#podcasts_id_body_1"><code>podcasts_id_body_1</code></a></li>
+    <li><a href="#podcasts_id_body_2"><code>podcasts_id_body_2</code></a></li>
+    <li><a href="#podcasts_insert_input!"><code>podcasts_insert_input!</code> - podcasts_insert_input</a></li>
+    <li><a href="#podcasts_set_input!"><code>podcasts_set_input!</code> - podcasts_set_input</a></li>
+    <li><a href="#rest_emails_body"><code>rest_emails_body</code></a></li>
+    <li><a href="#rest_podcasts_body"><code>rest_podcasts_body</code></a></li>
+    <li><a href="#rest_users_body"><code>rest_users_body</code></a></li>
+    <li><a href="#timestamp"><code>timestamp</code> - timestamp</a></li>
+    <li><a href="#timestamp!"><code>timestamp!</code> - timestamp</a></li>
+    <li><a href="#users"><code>users</code> - users</a></li>
+    <li><a href="#users_1"><code>users_1</code> - users</a></li>
+    <li><a href="#users_id_body"><code>users_id_body</code></a></li>
+    <li><a href="#users_id_body_1"><code>users_id_body_1</code></a></li>
+    <li><a href="#users_id_body_2"><code>users_id_body_2</code></a></li>
+    <li><a href="#users_insert_input!"><code>users_insert_input!</code> - users_insert_input</a></li>
+    <li><a href="#users_set_input!"><code>users_set_input!</code> - users_set_input</a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="emails"><code>emails</code> - emails</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>columns and relationships of &amp;quot;emails&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">subscribed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="emails_1"><code>emails_1</code> - emails</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>columns and relationships of &amp;quot;emails&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">subscribed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="emails_id_body"><code>emails_id_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="emails_id_body_1"><code>emails_id_body_1</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails_set_input!">emails_set_input!</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="emails_id_body_2"><code>emails_id_body_2</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="emails_insert_input!"><code>emails_insert_input!</code> - emails_insert_input</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>input type for inserting data into table &amp;quot;emails&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">subscribed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="emails_set_input!"><code>emails_set_input!</code> - emails_set_input</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>input type for updating data in table &amp;quot;emails&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">subscribed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200"><code>inline_response_200</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">users (optional)</div><div class="param-desc"><span class="param-type"><a href="#users">array[users]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_1"><code>inline_response_200_1</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">insert_users_one (optional)</div><div class="param-desc"><span class="param-type"><a href="#users_1">users_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_10"><code>inline_response_200_10</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">emails (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails">array[emails]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_11"><code>inline_response_200_11</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">insert_emails_one (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails_1">emails_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_12"><code>inline_response_200_12</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">emails_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails_1">emails_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_13"><code>inline_response_200_13</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">update_emails_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails_1">emails_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_14"><code>inline_response_200_14</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">delete_emails_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails_1">emails_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_2"><code>inline_response_200_2</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">users_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#users_1">users_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_3"><code>inline_response_200_3</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">update_users_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#users_1">users_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_4"><code>inline_response_200_4</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">delete_users_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#users_1">users_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_5"><code>inline_response_200_5</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">podcasts (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts">array[podcasts]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_6"><code>inline_response_200_6</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">insert_podcasts_one (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts_1">podcasts_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_7"><code>inline_response_200_7</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">podcasts_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts_1">podcasts_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_8"><code>inline_response_200_8</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">update_podcasts_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts_1">podcasts_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_9"><code>inline_response_200_9</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">delete_podcasts_by_pk (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts_1">podcasts_1</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="jsonb"><code>jsonb</code> - jsonb</a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="jsonb!"><code>jsonb!</code> - jsonb</a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts"><code>podcasts</code> - podcasts</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>columns and relationships of &amp;quot;podcasts&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">articles (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">audio_file_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">completed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">date (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp!">timestamp!</a></span>  </div>
+<div class="param">episode_number (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">episode_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">script (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">user_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts_1"><code>podcasts_1</code> - podcasts</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>columns and relationships of &amp;quot;podcasts&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">articles (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">audio_file_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">completed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">date (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp!">timestamp!</a></span>  </div>
+<div class="param">episode_number (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">episode_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">script (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">user_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts_id_body"><code>podcasts_id_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts_id_body_1"><code>podcasts_id_body_1</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts_set_input!">podcasts_set_input!</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts_id_body_2"><code>podcasts_id_body_2</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts_insert_input!"><code>podcasts_insert_input!</code> - podcasts_insert_input</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>input type for inserting data into table &amp;quot;podcasts&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">articles (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">audio_file_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">completed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">date (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp">timestamp</a></span>  </div>
+<div class="param">episode_number (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">episode_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">script (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">user_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="podcasts_set_input!"><code>podcasts_set_input!</code> - podcasts_set_input</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>input type for updating data in table &amp;quot;podcasts&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">articles (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">audio_file_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">completed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">date (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp">timestamp</a></span>  </div>
+<div class="param">episode_number (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">episode_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">script (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">user_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="rest_emails_body"><code>rest_emails_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#emails_insert_input!">emails_insert_input!</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="rest_podcasts_body"><code>rest_podcasts_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#podcasts_insert_input!">podcasts_insert_input!</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="rest_users_body"><code>rest_users_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#users_insert_input!">users_insert_input!</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="timestamp"><code>timestamp</code> - timestamp</a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="timestamp!"><code>timestamp!</code> - timestamp</a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users"><code>users</code> - users</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>columns and relationships of &amp;quot;users&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">active (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">active_notes (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">delivered (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp!">timestamp!</a></span>  </div>
+<div class="param">delivery_day (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">episode (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">industry (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">keywords (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">note (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">occupation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password_hash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">plan (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">role (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_customer_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_product_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_subscription_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">verified (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_1"><code>users_1</code> - users</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>columns and relationships of &amp;quot;users&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">active (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">active_notes (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">delivered (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp!">timestamp!</a></span>  </div>
+<div class="param">delivery_day (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">episode (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">industry (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">keywords (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">note (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb!">jsonb!</a></span>  </div>
+<div class="param">occupation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password_hash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">plan (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">role (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_customer_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_product_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_subscription_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">verified (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_id_body"><code>users_id_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_id_body_1"><code>users_id_body_1</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">object (optional)</div><div class="param-desc"><span class="param-type"><a href="#users_set_input!">users_set_input!</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_id_body_2"><code>users_id_body_2</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_insert_input!"><code>users_insert_input!</code> - users_insert_input</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>input type for inserting data into table &amp;quot;users&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">active (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">active_notes (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">delivered (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp">timestamp</a></span>  </div>
+<div class="param">delivery_day (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">episode (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">industry (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">keywords (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">note (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">occupation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password_hash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">plan (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">role (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_customer_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_product_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_subscription_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">verified (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_set_input!"><code>users_set_input!</code> - users_set_input</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>input type for updating data in table &amp;quot;users&amp;quot;</div>
+    <div class="field-items">
+      <div class="param">active (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">active_notes (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">delivered (optional)</div><div class="param-desc"><span class="param-type"><a href="#timestamp">timestamp</a></span>  </div>
+<div class="param">delivery_day (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">episode (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">industry (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">keywords (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">note (optional)</div><div class="param-desc"><span class="param-type"><a href="#jsonb">jsonb</a></span>  </div>
+<div class="param">occupation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password_hash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">plan (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">role (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_customer_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_product_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">stripe_subscription_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">verified (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
