@@ -1,0 +1,72 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: DeleteUsersByStripeCustomerIdResponse
+  description: Responses from the 'delete_users_by_stripe_customer_id' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Users!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: DeleteUsersByStripeCustomerIdResponse
+    inputTypeName: DeleteUsersByStripeCustomerIdResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: delete_users_by_stripe_customer_id_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: DeleteUsersByStripeCustomerIdResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: DeleteUsersByStripeCustomerId
+  outputType: DeleteUsersByStripeCustomerIdResponse!
+  arguments:
+    - name: keyStripeCustomerId
+      type: String_1
+    - name: preCheck
+      type: UsersBoolExp
+      description: Delete permission predicate over the 'users' collection
+  source:
+    dataConnectorName: my_pg
+    dataConnectorCommand:
+      procedure: delete_users_by_stripe_customer_id
+    argumentMapping:
+      keyStripeCustomerId: key_stripe_customer_id
+      preCheck: pre_check
+  graphql:
+    rootFieldName: deleteUsersByStripeCustomerId
+    rootFieldKind: Mutation
+  description: Delete any row on the 'users' collection using the 'stripe_customer_id' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: DeleteUsersByStripeCustomerId
+  permissions:
+    - role: admin
+      allowExecution: true
+

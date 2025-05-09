@@ -1,0 +1,104 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertEmailsObject
+  fields:
+    - name: email
+      type: String_1!
+    - name: id
+      type: Int32
+    - name: subscribed
+      type: Boolean_1
+  graphql:
+    typeName: InsertEmailsObject
+    inputTypeName: InsertEmailsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: insert_emails_object
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertEmailsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - email
+          - id
+          - subscribed
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertEmailsResponse
+  description: Responses from the 'insert_emails' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Emails!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertEmailsResponse
+    inputTypeName: InsertEmailsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: insert_emails_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertEmailsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertEmails
+  outputType: InsertEmailsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertEmailsObject!]!"
+    - name: postCheck
+      type: EmailsBoolExp
+      description: Insert permission predicate over the 'emails' collection
+  source:
+    dataConnectorName: my_pg
+    dataConnectorCommand:
+      procedure: insert_emails
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertEmails
+    rootFieldKind: Mutation
+  description: Insert into the emails table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertEmails
+  permissions:
+    - role: admin
+      allowExecution: true
+

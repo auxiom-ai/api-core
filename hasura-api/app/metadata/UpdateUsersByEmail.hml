@@ -1,0 +1,845 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersActive
+  description: Update the 'active' column in the 'users' collection
+  fields:
+    - name: set
+      type: Boolean_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersActive
+    inputTypeName: UpdateColumnUsersActiveInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_active
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersActive
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersActiveNotes
+  description: Update the 'active_notes' column in the 'users' collection
+  fields:
+    - name: set
+      type: Jsonb!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersActiveNotes
+    inputTypeName: UpdateColumnUsersActiveNotesInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_active_notes
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersActiveNotes
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersDelivered
+  description: Update the 'delivered' column in the 'users' collection
+  fields:
+    - name: set
+      type: Timestamp!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersDelivered
+    inputTypeName: UpdateColumnUsersDeliveredInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_delivered
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersDelivered
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersDeliveryDay
+  description: Update the 'delivery_day' column in the 'users' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersDeliveryDay
+    inputTypeName: UpdateColumnUsersDeliveryDayInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_delivery_day
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersDeliveryDay
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersEmail
+  description: Update the 'email' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersEmail
+    inputTypeName: UpdateColumnUsersEmailInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_email
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersEmail
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersEpisode
+  description: Update the 'episode' column in the 'users' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersEpisode
+    inputTypeName: UpdateColumnUsersEpisodeInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_episode
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersEpisode
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersId
+  description: Update the 'id' column in the 'users' collection
+  fields:
+    - name: set
+      type: Int32!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersId
+    inputTypeName: UpdateColumnUsersIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersIndustry
+  description: Update the 'industry' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersIndustry
+    inputTypeName: UpdateColumnUsersIndustryInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_industry
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersIndustry
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersKeywords
+  description: Update the 'keywords' column in the 'users' collection
+  fields:
+    - name: set
+      type: Jsonb!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersKeywords
+    inputTypeName: UpdateColumnUsersKeywordsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_keywords
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersKeywords
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersName
+  description: Update the 'name' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersName
+    inputTypeName: UpdateColumnUsersNameInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_name
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersName
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersNote
+  description: Update the 'note' column in the 'users' collection
+  fields:
+    - name: set
+      type: Jsonb!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersNote
+    inputTypeName: UpdateColumnUsersNoteInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_note
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersNote
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersOccupation
+  description: Update the 'occupation' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersOccupation
+    inputTypeName: UpdateColumnUsersOccupationInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_occupation
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersOccupation
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersPasswordHash
+  description: Update the 'password_hash' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersPasswordHash
+    inputTypeName: UpdateColumnUsersPasswordHashInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_password_hash
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersPasswordHash
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersPlan
+  description: Update the 'plan' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersPlan
+    inputTypeName: UpdateColumnUsersPlanInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_plan
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersPlan
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersRole
+  description: Update the 'role' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersRole
+    inputTypeName: UpdateColumnUsersRoleInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_role
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersRole
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersStripeCustomerId
+  description: Update the 'stripe_customer_id' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersStripeCustomerId
+    inputTypeName: UpdateColumnUsersStripeCustomerIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_stripe_customer_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersStripeCustomerId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersStripeProductId
+  description: Update the 'stripe_product_id' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersStripeProductId
+    inputTypeName: UpdateColumnUsersStripeProductIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_stripe_product_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersStripeProductId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersStripeSubscriptionId
+  description: Update the 'stripe_subscription_id' column in the 'users' collection
+  fields:
+    - name: set
+      type: String_1
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersStripeSubscriptionId
+    inputTypeName: UpdateColumnUsersStripeSubscriptionIdInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_stripe_subscription_id
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersStripeSubscriptionId
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateColumnUsersVerified
+  description: Update the 'verified' column in the 'users' collection
+  fields:
+    - name: set
+      type: Boolean_1!
+      description: Set the column to this value
+  graphql:
+    typeName: UpdateColumnUsersVerified
+    inputTypeName: UpdateColumnUsersVerifiedInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_column_users_verified
+      fieldMapping:
+        set:
+          column:
+            name: _set
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateColumnUsersVerified
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - set
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateUsersByEmailUpdateColumns
+  description: Update the columns of the 'users' collection
+  fields:
+    - name: active
+      type: UpdateColumnUsersActive
+      description: Update the 'active' column in the 'users' collection.
+    - name: activeNotes
+      type: UpdateColumnUsersActiveNotes
+      description: Update the 'active_notes' column in the 'users' collection.
+    - name: delivered
+      type: UpdateColumnUsersDelivered
+      description: Update the 'delivered' column in the 'users' collection.
+    - name: deliveryDay
+      type: UpdateColumnUsersDeliveryDay
+      description: Update the 'delivery_day' column in the 'users' collection.
+    - name: email
+      type: UpdateColumnUsersEmail
+      description: Update the 'email' column in the 'users' collection.
+    - name: episode
+      type: UpdateColumnUsersEpisode
+      description: Update the 'episode' column in the 'users' collection.
+    - name: id
+      type: UpdateColumnUsersId
+      description: Update the 'id' column in the 'users' collection.
+    - name: industry
+      type: UpdateColumnUsersIndustry
+      description: Update the 'industry' column in the 'users' collection.
+    - name: keywords
+      type: UpdateColumnUsersKeywords
+      description: Update the 'keywords' column in the 'users' collection.
+    - name: name
+      type: UpdateColumnUsersName
+      description: Update the 'name' column in the 'users' collection.
+    - name: note
+      type: UpdateColumnUsersNote
+      description: Update the 'note' column in the 'users' collection.
+    - name: occupation
+      type: UpdateColumnUsersOccupation
+      description: Update the 'occupation' column in the 'users' collection.
+    - name: passwordHash
+      type: UpdateColumnUsersPasswordHash
+      description: Update the 'password_hash' column in the 'users' collection.
+    - name: plan
+      type: UpdateColumnUsersPlan
+      description: Update the 'plan' column in the 'users' collection.
+    - name: role
+      type: UpdateColumnUsersRole
+      description: Update the 'role' column in the 'users' collection.
+    - name: stripeCustomerId
+      type: UpdateColumnUsersStripeCustomerId
+      description: Update the 'stripe_customer_id' column in the 'users' collection.
+    - name: stripeProductId
+      type: UpdateColumnUsersStripeProductId
+      description: Update the 'stripe_product_id' column in the 'users' collection.
+    - name: stripeSubscriptionId
+      type: UpdateColumnUsersStripeSubscriptionId
+      description: Update the 'stripe_subscription_id' column in the 'users' collection.
+    - name: verified
+      type: UpdateColumnUsersVerified
+      description: Update the 'verified' column in the 'users' collection.
+  graphql:
+    typeName: UpdateUsersByEmailUpdateColumns
+    inputTypeName: UpdateUsersByEmailUpdateColumnsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_users_by_email_update_columns
+      fieldMapping:
+        active:
+          column:
+            name: active
+        activeNotes:
+          column:
+            name: active_notes
+        delivered:
+          column:
+            name: delivered
+        deliveryDay:
+          column:
+            name: delivery_day
+        email:
+          column:
+            name: email
+        episode:
+          column:
+            name: episode
+        id:
+          column:
+            name: id
+        industry:
+          column:
+            name: industry
+        keywords:
+          column:
+            name: keywords
+        name:
+          column:
+            name: name
+        note:
+          column:
+            name: note
+        occupation:
+          column:
+            name: occupation
+        passwordHash:
+          column:
+            name: password_hash
+        plan:
+          column:
+            name: plan
+        role:
+          column:
+            name: role
+        stripeCustomerId:
+          column:
+            name: stripe_customer_id
+        stripeProductId:
+          column:
+            name: stripe_product_id
+        stripeSubscriptionId:
+          column:
+            name: stripe_subscription_id
+        verified:
+          column:
+            name: verified
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateUsersByEmailUpdateColumns
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - active
+          - activeNotes
+          - delivered
+          - deliveryDay
+          - email
+          - episode
+          - id
+          - industry
+          - keywords
+          - name
+          - note
+          - occupation
+          - passwordHash
+          - plan
+          - role
+          - stripeCustomerId
+          - stripeProductId
+          - stripeSubscriptionId
+          - verified
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: UpdateUsersByEmailResponse
+  description: Responses from the 'update_users_by_email' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Users!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: UpdateUsersByEmailResponse
+    inputTypeName: UpdateUsersByEmailResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: update_users_by_email_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: UpdateUsersByEmailResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: UpdateUsersByEmail
+  outputType: UpdateUsersByEmailResponse!
+  arguments:
+    - name: keyEmail
+      type: String_1!
+    - name: postCheck
+      type: UsersBoolExp
+      description: Update permission post-condition predicate over the 'users' collection
+    - name: preCheck
+      type: UsersBoolExp
+      description: Update permission pre-condition predicate over the 'users' collection
+    - name: updateColumns
+      type: UpdateUsersByEmailUpdateColumns!
+  source:
+    dataConnectorName: my_pg
+    dataConnectorCommand:
+      procedure: update_users_by_email
+    argumentMapping:
+      keyEmail: key_email
+      postCheck: post_check
+      preCheck: pre_check
+      updateColumns: update_columns
+  graphql:
+    rootFieldName: updateUsersByEmail
+    rootFieldKind: Mutation
+  description: Update any row on the 'users' collection using the 'email' key
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: UpdateUsersByEmail
+  permissions:
+    - role: admin
+      allowExecution: true
+

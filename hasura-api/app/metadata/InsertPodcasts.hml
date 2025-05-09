@@ -1,0 +1,156 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPodcastsObject
+  fields:
+    - name: articles
+      type: Jsonb!
+    - name: audioFileUrl
+      type: String_1
+    - name: completed
+      type: Boolean_1
+    - name: date
+      type: Timestamp
+    - name: episodeNumber
+      type: Int32!
+    - name: episodeType
+      type: String_1!
+    - name: id
+      type: Int32
+    - name: script
+      type: Jsonb
+    - name: title
+      type: String_1!
+    - name: userId
+      type: Int32!
+  graphql:
+    typeName: InsertPodcastsObject
+    inputTypeName: InsertPodcastsObjectInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: insert_podcasts_object
+      fieldMapping:
+        articles:
+          column:
+            name: articles
+        audioFileUrl:
+          column:
+            name: audio_file_url
+        completed:
+          column:
+            name: completed
+        date:
+          column:
+            name: date
+        episodeNumber:
+          column:
+            name: episode_number
+        episodeType:
+          column:
+            name: episode_type
+        id:
+          column:
+            name: id
+        script:
+          column:
+            name: script
+        title:
+          column:
+            name: title
+        userId:
+          column:
+            name: user_id
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPodcastsObject
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - articles
+          - audioFileUrl
+          - completed
+          - date
+          - episodeNumber
+          - episodeType
+          - id
+          - script
+          - title
+          - userId
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: InsertPodcastsResponse
+  description: Responses from the 'insert_podcasts' procedure
+  fields:
+    - name: affectedRows
+      type: Int32!
+      description: The number of rows affected by the mutation
+    - name: returning
+      type: "[Podcasts!]!"
+      description: Data from rows affected by the mutation
+  graphql:
+    typeName: InsertPodcastsResponse
+    inputTypeName: InsertPodcastsResponseInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: insert_podcasts_response
+      fieldMapping:
+        affectedRows:
+          column:
+            name: affected_rows
+        returning:
+          column:
+            name: returning
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: InsertPodcastsResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - affectedRows
+          - returning
+
+---
+kind: Command
+version: v1
+definition:
+  name: InsertPodcasts
+  outputType: InsertPodcastsResponse!
+  arguments:
+    - name: objects
+      type: "[InsertPodcastsObject!]!"
+    - name: postCheck
+      type: PodcastsBoolExp
+      description: Insert permission predicate over the 'podcasts' collection
+  source:
+    dataConnectorName: my_pg
+    dataConnectorCommand:
+      procedure: insert_podcasts
+    argumentMapping:
+      objects: objects
+      postCheck: post_check
+  graphql:
+    rootFieldName: insertPodcasts
+    rootFieldKind: Mutation
+  description: Insert into the podcasts table
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: InsertPodcasts
+  permissions:
+    - role: admin
+      allowExecution: true
+

@@ -1,0 +1,31 @@
+services:
+  # Adminer is a lightweight database management tool (optional)
+  adminer:
+    volumes: 
+      - ./adminer/index.php:/var/www/html/index.php
+    depends_on:
+      - postgres
+    environment:
+      ADMINER_DEFAULT_DB: dev
+      ADMINER_DEFAULT_DRIVER: pgsql
+      ADMINER_DEFAULT_PASSWORD: password
+      ADMINER_DEFAULT_SERVER: postgres
+      ADMINER_DEFAULT_USERNAME: user
+    image: adminer:latest
+    ports:
+      - 4371:8080
+    restart: unless-stopped
+  # Bundled Postgres database with pgvector (optional)
+  postgres:
+    environment:
+      POSTGRES_DB: dev
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+    image: pgvector/pgvector:pg17
+    ports:
+      - 9172:5432
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data: {}

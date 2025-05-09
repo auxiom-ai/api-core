@@ -1,0 +1,228 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: Podcasts
+  fields:
+    - name: articles
+      type: Jsonb!
+    - name: audioFileUrl
+      type: String_1
+    - name: completed
+      type: Boolean_1!
+    - name: date
+      type: Timestamp!
+    - name: episodeNumber
+      type: Int32!
+    - name: episodeType
+      type: String_1!
+    - name: id
+      type: Int32!
+    - name: script
+      type: Jsonb!
+    - name: title
+      type: String_1!
+    - name: userId
+      type: Int32!
+  graphql:
+    typeName: Podcasts
+    inputTypeName: PodcastsInput
+  dataConnectorTypeMapping:
+    - dataConnectorName: my_pg
+      dataConnectorObjectType: podcasts
+      fieldMapping:
+        articles:
+          column:
+            name: articles
+        audioFileUrl:
+          column:
+            name: audio_file_url
+        completed:
+          column:
+            name: completed
+        date:
+          column:
+            name: date
+        episodeNumber:
+          column:
+            name: episode_number
+        episodeType:
+          column:
+            name: episode_type
+        id:
+          column:
+            name: id
+        script:
+          column:
+            name: script
+        title:
+          column:
+            name: title
+        userId:
+          column:
+            name: user_id
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: Podcasts
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - articles
+          - audioFileUrl
+          - completed
+          - date
+          - episodeNumber
+          - episodeType
+          - id
+          - script
+          - title
+          - userId
+
+---
+kind: BooleanExpressionType
+version: v1
+definition:
+  name: PodcastsBoolExp
+  operand:
+    object:
+      type: Podcasts
+      comparableFields:
+        - fieldName: articles
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: audioFileUrl
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: completed
+          booleanExpressionType: BoolBoolExp
+        - fieldName: date
+          booleanExpressionType: TimestampBoolExp
+        - fieldName: episodeNumber
+          booleanExpressionType: Int4BoolExp
+        - fieldName: episodeType
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: id
+          booleanExpressionType: Int4BoolExp
+        - fieldName: script
+          booleanExpressionType: JsonbBoolExp
+        - fieldName: title
+          booleanExpressionType: VarcharBoolExp
+        - fieldName: userId
+          booleanExpressionType: Int4BoolExp
+      comparableRelationships: []
+  logicalOperators:
+    enable: true
+  isNull:
+    enable: true
+  graphql:
+    typeName: PodcastsBoolExp
+
+---
+kind: AggregateExpression
+version: v1
+definition:
+  name: PodcastsAggExp
+  operand:
+    object:
+      aggregatedType: Podcasts
+      aggregatableFields:
+        - fieldName: articles
+          aggregateExpression: JsonbAggExp
+        - fieldName: audioFileUrl
+          aggregateExpression: VarcharAggExp
+        - fieldName: completed
+          aggregateExpression: BoolAggExp
+        - fieldName: date
+          aggregateExpression: TimestampAggExp
+        - fieldName: episodeNumber
+          aggregateExpression: Int4AggExp
+        - fieldName: episodeType
+          aggregateExpression: VarcharAggExp
+        - fieldName: id
+          aggregateExpression: Int4AggExp
+        - fieldName: script
+          aggregateExpression: JsonbAggExp
+        - fieldName: title
+          aggregateExpression: VarcharAggExp
+        - fieldName: userId
+          aggregateExpression: Int4AggExp
+  count:
+    enable: true
+  graphql:
+    selectTypeName: PodcastsAggExp
+
+---
+kind: OrderByExpression
+version: v1
+definition:
+  name: PodcastsOrderByExp
+  operand:
+    object:
+      orderedType: Podcasts
+      orderableFields:
+        - fieldName: articles
+          orderByExpression: JsonbOrderByExp
+        - fieldName: audioFileUrl
+          orderByExpression: String1OrderByExp
+        - fieldName: completed
+          orderByExpression: Boolean1OrderByExp
+        - fieldName: date
+          orderByExpression: TimestampOrderByExp
+        - fieldName: episodeNumber
+          orderByExpression: Int32OrderByExp
+        - fieldName: episodeType
+          orderByExpression: String1OrderByExp
+        - fieldName: id
+          orderByExpression: Int32OrderByExp
+        - fieldName: script
+          orderByExpression: JsonbOrderByExp
+        - fieldName: title
+          orderByExpression: String1OrderByExp
+        - fieldName: userId
+          orderByExpression: Int32OrderByExp
+      orderableRelationships: []
+  graphql:
+    expressionTypeName: PodcastsOrderByExp
+
+---
+kind: Model
+version: v2
+definition:
+  name: Podcasts
+  objectType: Podcasts
+  source:
+    dataConnectorName: my_pg
+    collection: podcasts
+  filterExpressionType: PodcastsBoolExp
+  aggregateExpression: PodcastsAggExp
+  orderByExpression: PodcastsOrderByExp
+  graphql:
+    selectMany:
+      queryRootField: podcasts
+      subscription:
+        rootField: podcasts
+    selectUniques:
+      - queryRootField: podcastsById
+        uniqueIdentifier:
+          - id
+        subscription:
+          rootField: podcastsById
+    filterInputTypeName: PodcastsFilterInput
+    aggregate:
+      queryRootField: podcastsAggregate
+      subscription:
+        rootField: podcastsAggregate
+
+---
+kind: ModelPermissions
+version: v1
+definition:
+  modelName: Podcasts
+  permissions:
+    - role: admin
+      select:
+        filter: null
+        allowSubscriptions: true
+
