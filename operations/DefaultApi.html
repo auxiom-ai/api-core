@@ -1,0 +1,596 @@
+<div class="main-content">
+  <h2><a name=""></a></h2>
+  <p>This is the  API</p>
+
+  <h2><a name="apiRestEmailsGet"></a>apiRestEmailsGet</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql query emails {   emails {     email     id     subscribed   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/emails</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_10"><a href="">inline_response_200_10</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestEmailsIdDelete"></a>apiRestEmailsIdDelete</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation delete_emails_by_pk($id: Int!) {   delete_emails_by_pk(id: $id) {     email     id     subscribed   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/emails/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>DELETE</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_14"><a href="">inline_response_200_14</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Emails_id_body_2(Emails_id_body_2)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestEmailsIdGet"></a>apiRestEmailsIdGet</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql query emails_by_pk($id: Int!) {   emails_by_pk(id: $id) {     email     id     subscribed   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/emails/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_12"><a href="">inline_response_200_12</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Emails_id_body(Emails_id_body)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestEmailsIdPost"></a>apiRestEmailsIdPost</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation update_emails_by_pk($id: Int!, $object: emails_set_input!) {   update_emails_by_pk(pk_columns: {id: $id}, _set: $object) {     email     id     subscribed   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/emails/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_13"><a href="">inline_response_200_13</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Emails_id_body_1(Emails_id_body_1)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestEmailsPost"></a>apiRestEmailsPost</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation insert_emails_one($object: emails_insert_input!) {   insert_emails_one(object: $object) {     email     id     subscribed   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/emails</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_11"><a href="">inline_response_200_11</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Rest_emails_body(Rest_emails_body)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestPodcastsGet"></a>apiRestPodcastsGet</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql query podcasts {   podcasts {     articles     audio_file_url     completed     date     episode_number     episode_type     id     script     title     user_id   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/podcasts</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_5"><a href="">inline_response_200_5</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestPodcastsIdDelete"></a>apiRestPodcastsIdDelete</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation delete_podcasts_by_pk($id: Int!) {   delete_podcasts_by_pk(id: $id) {     articles     audio_file_url     completed     date     episode_number     episode_type     id     script     title     user_id   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/podcasts/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>DELETE</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_9"><a href="">inline_response_200_9</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Podcasts_id_body_2(Podcasts_id_body_2)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestPodcastsIdGet"></a>apiRestPodcastsIdGet</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql query podcasts_by_pk($id: Int!) {   podcasts_by_pk(id: $id) {     articles     audio_file_url     completed     date     episode_number     episode_type     id     script     title     user_id   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/podcasts/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_7"><a href="">inline_response_200_7</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Podcasts_id_body(Podcasts_id_body)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestPodcastsIdPost"></a>apiRestPodcastsIdPost</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation update_podcasts_by_pk($id: Int!, $object: podcasts_set_input!) {   update_podcasts_by_pk(pk_columns: {id: $id}, _set: $object) {     articles     audio_file_url     completed     date     episode_number     episode_type     id     script     title     user_id   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/podcasts/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_8"><a href="">inline_response_200_8</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Podcasts_id_body_1(Podcasts_id_body_1)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestPodcastsPost"></a>apiRestPodcastsPost</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation insert_podcasts_one($object: podcasts_insert_input!) {   insert_podcasts_one(object: $object) {     articles     audio_file_url     completed     date     episode_number     episode_type     id     script     title     user_id   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/podcasts</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_6"><a href="">inline_response_200_6</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Rest_podcasts_body(Rest_podcasts_body)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestUsersGet"></a>apiRestUsersGet</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql query users {   users {     active     active_notes     delivered     delivery_day     email     episode     id     industry     keywords     name     note     occupation     password_hash     plan     role     stripe_customer_id     stripe_product_id     stripe_subscription_id     verified   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/users</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200"><a href="">inline_response_200</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestUsersIdDelete"></a>apiRestUsersIdDelete</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation delete_users_by_pk($id: Int!) {   delete_users_by_pk(id: $id) {     active     active_notes     delivered     delivery_day     email     episode     id     industry     keywords     name     note     occupation     password_hash     plan     role     stripe_customer_id     stripe_product_id     stripe_subscription_id     verified   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/users/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>DELETE</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_4"><a href="">inline_response_200_4</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Users_id_body_2(Users_id_body_2)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestUsersIdGet"></a>apiRestUsersIdGet</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql query users_by_pk($id: Int!) {   users_by_pk(id: $id) {     active     active_notes     delivered     delivery_day     email     episode     id     industry     keywords     name     note     occupation     password_hash     plan     role     stripe_customer_id     stripe_product_id     stripe_subscription_id     verified   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/users/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>GET</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_2"><a href="">inline_response_200_2</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Users_id_body(Users_id_body)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestUsersIdPost"></a>apiRestUsersIdPost</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation update_users_by_pk($id: Int!, $object: users_set_input!) {   update_users_by_pk(pk_columns: {id: $id}, _set: $object) {     active     active_notes     delivered     delivery_day     email     episode     id     industry     keywords     name     note     occupation     password_hash     plan     role     stripe_customer_id     stripe_product_id     stripe_subscription_id     verified   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/users/{id}</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_3"><a href="">inline_response_200_3</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Users_id_body_1(Users_id_body_1)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      <span class="param-in">Path: </span>
+      
+      
+      <span class="param-name">id</span>
+      <span class="param-type">Integer</span>
+      
+      <p class="param-description">_\&quot;id\&quot; is required (enter it either in parameters or request body)_</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+  <h2><a name="apiRestUsersPost"></a>apiRestUsersPost</h2>
+  <hr>
+  <p></p>
+  <p>*** The GraphQl query for this endpoint is: &#x60;&#x60;&#x60; graphql mutation insert_users_one($object: users_insert_input!) {   insert_users_one(object: $object) {     active     active_notes     delivered     delivery_day     email     episode     id     industry     keywords     name     note     occupation     password_hash     plan     role     stripe_customer_id     stripe_product_id     stripe_subscription_id     verified   } }  &#x60;&#x60;&#x60;</p>
+  <h3 class="section">URL</h3>
+  <code>//api/rest/users</code>
+  <h3 class="section">HTTP Method</h3>
+  <code>POST</code>
+  <h3 class="section">Response Type</h3>
+  <div class="model" data-model="inline_response_200_1"><a href="">inline_response_200_1</a></div>
+  <h3 class="section">Parameters</h3>
+  <ul>
+	  <li class="parameter">
+      
+      
+      
+      
+      <span class="param-in">Body: </span>
+      <span class="param-name">body</span>
+      <span class="param-type">Rest_users_body(Rest_users_body)</span>
+      
+      <p class="param-description">Query parameters can also be provided in the request body as a JSON object</p>
+	  </li>
+	  <li class="parameter">
+      
+      
+      
+      <span class="param-in">Header: </span>
+      
+      <span class="param-name">x-hasura-admin-secret</span>
+      <span class="param-type">String</span>
+      
+      <p class="param-description">Your x-hasura-admin-secret will be used for authentication of the API request.</p>
+	  </li>
+  </ul>
+</div>
